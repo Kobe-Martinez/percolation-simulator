@@ -1,102 +1,92 @@
-# Percolation
+# Percolation Simulator
 
-A Java implementation of the Percolation model, which simulates a grid-based system to explore percolation properties. The project uses the Weighted Quick Union-Find algorithm to efficiently determine connectivity and includes methods for grid visualization and probabilistic site opening.
+This project simulates the Percolation model using an `n x n` grid, leveraging the Weighted Quick Union-Find algorithm. It allows users to explore connectivity, percolation detection, and probabilistic site opening while visualizing the grid with the StdDraw library. Perfect for understanding computational simulations and algorithms.
 
-## Authors
 
-- Ana Paula Centeno
-- Haolin (Daniel) Jin
-- Kobe Lee Martinez
+## Table of Contents
+
+- [Features](#features)
+- [Usage](#usage)
+- [Code Structure](#code-structure)
+- [Requirements](#requirements)
+- [File Outputs](#file-outputs)
+- [License](#license)
+- [Important Note](#important-note)
+
 
 ## Features
 
-- **Dynamic grid creation**: Initialize a grid of any size `n x n`.
-- **Site opening and connectivity**: Open sites and connect them to neighbors.
-- **Percolation detection**: Check if the system percolates.
-- **Randomized site opening**: Open sites based on a probability and random seed.
-- **Visualization**: Display the grid using the StdDraw library.
+- **Dynamic Grid Creation**
+  - Initialize a customizable grid of size `n x n`.
 
-## File Structure
+- **Site Management**
+  - Open individual sites and connect them to neighbors.
+  - Supports connections to virtual top and bottom nodes for efficient percolation detection.
 
-- `Percolation.java`: Main class implementing the percolation logic.
-- `README.md`: Guide to setting up and running the project.
-- `lib/`: Contains required dependencies.
-- `src/`: Source folder for additional project files.
-- `bin/`: Generated folder for compiled output files.
+- **Randomized Site Opening**
+  - Open grid sites probabilistically using customizable probabilities and random seeds.
 
-## Prerequisites
+- **Visualization**
+  - Visualize the grid state using the StdDraw library, with color-coded open (blue) and closed (black) sites.
 
-- Java 8 or later
-- StdDraw and WeightedQuickUnionFind libraries
+- **Percolation Detection**
+  - Check if the system percolates (i.e., there is a path of open sites connecting the top and bottom rows).
 
-## How to Run
 
-1. Clone this repository:
+## Usage
+
+1. **Clone the Repository**
    ```bash
-   git clone https://github.com/Kobe-Martinez/percolation.git
+   git clone https://github.com/Kobe-Martinez/percolation-simulator.git
    ```
 
-2. Compile the Java files:
+2. **Compile the Code**
    ```bash
    javac -cp .:lib/* src/Percolation.java
    ```
 
-3. Run the program:
+3. **Run the Program**
    ```bash
    java -cp .:lib/* src/Percolation
    ```
 
-## Usage
+4. **Visualize**
+   - The grid is visualized automatically using the StdDraw library.
 
-### Constructor
-Create a Percolation grid of size `n x n`:
-```java
-Percolation p = new Percolation(n);
-```
 
-### Open a Site
-Open the site at position `(row, col)`:
-```java
-p.openSite(row, col);
-```
+## Code Structure
 
-### Check Percolation
-Check if the system percolates:
-```java
-boolean doesPercolate = p.percolationCheck();
-```
+- **Percolation.java**
+  - Implements the main percolation logic, including site opening, grid visualization, and percolation detection.
 
-### Open All Sites Probabilistically
-Open sites based on a probability and random seed:
-```java
-p.openAllSites(probability, seed);
-```
+- **Grid Management**
+  - Handles site connectivity and checks for out-of-bounds indices.
 
-### Visualize the Grid
-Display the grid using the StdDraw library:
-```java
-p.displayGrid();
-```
+- **Visualization**
+  - Draws the grid using StdDraw, coloring open and closed sites appropriately.
 
-## Example
-```java
-public static void main(String[] args) {
-    double probability = 0.47;
-    Percolation p = new Percolation(5);
+- **Main Method**
+  - Demonstrates functionality, including random site opening and percolation detection.
 
-    p.openSite(0, 0);
-    p.openAllSites(probability, System.currentTimeMillis());
 
-    System.out.println("The system percolates: " + p.percolationCheck());
-    p.displayGrid();
-}
-```
+## Requirements
 
-## References
+- **Java**: Version 8 or higher.
+- **Libraries**: 
+  - StdDraw for grid visualization.
+  - WeightedQuickUnionFind for efficient connectivity checks.
 
-- [Weighted Quick-Union Algorithm](https://en.wikipedia.org/wiki/Disjoint-set_data_structure)
-- [StdDraw Library Documentation](https://introcs.cs.princeton.edu/java/stdlib/javadoc/StdDraw.html)
+
+## File Outputs
+
+- Visualization is displayed in a new window, and results are printed to the console.
+
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+
+## Important Note
+
+This project demonstrates the Percolation model and its applications in understanding connectivity and threshold probabilities in grid systems. It serves as an educational tool for studying algorithms and simulations in computer science.
