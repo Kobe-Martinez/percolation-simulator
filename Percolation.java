@@ -2,8 +2,6 @@
  * 
  * Percolation
  * 
- * @author Ana Paula Centeno
- * @author Haolin (Daniel) Jin
  * @author Kobe Lee Martinez
  */
 
