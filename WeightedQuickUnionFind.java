@@ -2,7 +2,7 @@
  * 
  * Implementation of Weighted Union Find
  * 
- * @author Ana Paula Centeno
+ * @author Kobe Martinez
  */
 public class WeightedQuickUnionFind {
     
